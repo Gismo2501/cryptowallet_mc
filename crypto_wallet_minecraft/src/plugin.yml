@@ -1,0 +1,30 @@
+name: CryptoWallet
+main: de.kggaming.cryptowallet.main
+version: 1.0
+api-version: 1.16
+depend: [Vault]
+commands:
+   wallet:
+      description: Wallet
+      usage: /<command> [buy|sell]
+permissions:
+  wallet:
+   description: Allows the wallet command
+   default: op
+  wallet.sell:
+   description: Allows to sell
+   default: op
+  wallet.buy:
+   description: Allows to buy
+   default: op
+  wallet.see:
+   description: Allows to see into other wallets
+   default: op
+  wallet.*:
+   description: Wildcard
+   default: op
+   children:
+     wallet: true
+     wallet.sell: true
+     wallet.buy: true
+     wallet.see: true
